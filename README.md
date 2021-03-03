@@ -1,7 +1,7 @@
-# StreetFighterV-Data-Analysis
-Data analysis of 12 SFV matches between Daigo and Tokido using Tableau.
+# Raging Download
+## Implementing in-depth data analysis to fighting games matches.
 
-Example of data analysis possible with [Raging Download](https://github.com/Tyler-Edwards-E/Raging-Download)
+Data analysis of 12 SFV matches between Daigo and Tokido using Tableau.
 
 The "DvT.csv" dataset was collected manually by watching a [video of the matches](https://youtu.be/LLPUW1IAGwY) and recording each action.
 
