@@ -20,7 +20,7 @@ _**Objectives**_
 
 **DEEPER ANALYSIS** - *Data analysis that either requires outside data or more technology to properly implement*
 - Health lost to move (e.g., total damage from fireballs) 
-- Projectile throw rhytm
+- Projectile throw rhythm
 - Distance walked
 
 ## Data Collection
@@ -28,7 +28,7 @@ The "DvT.xlsx" dataset was collected by watching a [video of the matches](https:
 Data analysis of 12 Street Fighter V matches between Daigo and Tokido using Tableau. Below are the potential methods for automating the process.
 
 **Official Implementation from Developer**
-###### Action + result counter is implemented into the source code and datasets can be exported or analysis is available in-game. (For Street Fighter V, the datasets could be accessed and export from the [CFN website](https://game.capcom.com/cfn/sfv/).
+###### Action + result counter is implemented into the source code and datasets can be exported or analysis is available in-game. (For Street Fighter V, the datasets could be accessed and exported from the [CFN website](https://game.capcom.com/cfn/sfv/).
 _PROS_
 - Data should be guaranteed to be 100% accurate
 - Should be easy to implement in source code
