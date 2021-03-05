@@ -7,7 +7,7 @@
 
 library("readxl")
 library("xlsx")
-DvT = read_excel("DvT.xlsx", sheet = 3)
+DvT = read_excel("../../DvT.xlsx", sheet = 3)
 
 # ------------------------ P1 Combos ------------------------------------------
 P1Combos = c()
@@ -62,11 +62,11 @@ P1Combos = merge(P1.Combo.Count, P1Combos, by = "Combo")
 P1Combos = unique(P1Combos)
 
 
-write.xlsx2(P1Combos, "P1-Combos.xlsx", sheetName="Combos",
+write.xlsx2(P1Combos, "DvT-Combos.xlsx", sheetName="P1-Combos",
             col.names=TRUE, row.names=FALSE, append=TRUE)
-write.xlsx2(P1.Starter.Count, "P1-Combos.xlsx", sheetName="Starters",
+write.xlsx2(P1.Starter.Count, "DvT-Combos.xlsx", sheetName="P1-Starters",
             col.names=TRUE, row.names=FALSE, append=TRUE)
-write.xlsx2(P1.Ender.Count, "P1-Combos.xlsx", sheetName="Enders",
+write.xlsx2(P1.Ender.Count, "DvT-Combos.xlsx", sheetName="P1-Enders",
             col.names=TRUE, row.names=FALSE, append=TRUE)
 
 
@@ -124,9 +124,9 @@ P2Combos = merge(P2.Combo.Count, P2Combos, by = "Combo")
 P2Combos = unique(P2Combos)
 
 
-write.xlsx2(P2Combos, "P2-Combos.xlsx", sheetName="Combos",
+write.xlsx2(P2Combos, "DvT-Combos.xlsx", sheetName="P2-Combos",
             col.names=TRUE, row.names=FALSE, append=TRUE)
-write.xlsx2(P2.Starter.Count, "P2-Combos.xlsx", sheetName="Starters",
+write.xlsx2(P2.Starter.Count, "DvT-Combos.xlsx", sheetName="P2-Starters",
             col.names=TRUE, row.names=FALSE, append=TRUE)
-write.xlsx2(P2.Ender.Count, "P2-Combos.xlsx", sheetName="Enders",
+write.xlsx2(P2.Ender.Count, "DvT-Combos.xlsx", sheetName="P2-Enders",
             col.names=TRUE, row.names=FALSE, append=TRUE)
