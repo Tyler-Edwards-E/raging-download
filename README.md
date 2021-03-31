@@ -59,3 +59,12 @@ _CONS_
 - Difficult to implement
 
 
+-----------------------------------------------------------------------
+
+###### WORK IN PROGRESS
+- [ ] Turn Tableau analysis
+- [ ] "Deeper" Analysis on health loss from moves
+- [ ] DvT dataset analysis article / report
+- [ ] Deep learning prototype
+
+
