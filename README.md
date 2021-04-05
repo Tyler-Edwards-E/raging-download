@@ -50,7 +50,7 @@ _CONS_
 **3.] OBJECT DETECTION DEEP LEARNING**
 ###### Same method used to manually collect the DvT dataset except done by an AI. The AI watches a video of a match and can identify the moves being used and their results.
 
-[![Ken Sprite Detection Prototype](https://user-images.githubusercontent.com/69095276/113636504-b85b5a00-9640-11eb-8958-7e54b509a423.gif)](https://www.youtube.com/watch?v=3gc-V6mTFsc "Sprite Detection Example")
+[![Ken Sprite Detection Prototype](https://user-images.githubusercontent.com/69095276/113636913-6bc44e80-9641-11eb-9587-1fbfd2701428.gif)](https://www.youtube.com/watch?v=3gc-V6mTFsc "Sprite Detection Example")
 
 _PROS_
 - Don't need to be in-game to collect data
@@ -60,7 +60,6 @@ _CONS_
 - Can't identify moves than were counterhit on frame 1
 - 100% accurate data not guranteed
 - Difficult to implement
-
 
 -----------------------------------------------------------------------
 
