@@ -58,6 +58,7 @@ _CONS_
 - 100% accurate data not guranteed
 - Difficult to implement
 
+https://user-images.githubusercontent.com/69095276/113635810-4afaf980-963f-11eb-8d3c-ac16f951bf3c.mp4
 
 -----------------------------------------------------------------------
 
@@ -65,6 +66,9 @@ _CONS_
 - [ ] Turn Tableau analysis
 - [ ] "Deeper" Analysis on health loss from moves
 - [ ] DvT dataset analysis article / report
-- [ ] Deep learning prototype
+- [x] Sprite detection prototype
+- [ ] Script that translates detection output into usuable data
+
+
 
 
