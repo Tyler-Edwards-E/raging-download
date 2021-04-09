@@ -64,8 +64,10 @@ _CONS_
 -----------------------------------------------------------------------
 
 ###### WORK IN PROGRESS
-- [ ] Turn Tableau analysis
-- [ ] "Deeper" Analysis on health loss from moves
+- [x] Turn Tableau analysis
+- [x] "Deeper" Analysis on health loss from moves (Sonicboom)
+- [x] Round based analysis
+- [ ] Rewrite README
 - [ ] DvT dataset analysis article / report
 - [x] Sprite detection prototype
 - [ ] Script that translates detection output into usuable data
