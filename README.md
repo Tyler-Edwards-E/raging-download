@@ -1,75 +1,37 @@
-# RAGING DOWNLOAD (WIP)
-## Implementing detailed data analysis to fighting games matches.
+# RAGING DOWNLOAD
+## Applying data science to fighting games.
 **Each action a player performs in a match is recorded into a dataset which can be analyzed to find trends in their play.**
 
 _**Objectives**_
-1. **Use data analysis to analyze gameplay in ways other methods, such as video analysis, cannot.**
+1. **Use data analysis to achieve deeper gameplay analysis.**
 2. **Provide conveinent gameplay analysis for new and casual players**
 
-## Data Analysis
+[_**Read the article for more information**_](https://github.com/Tyler-Edwards-E)
+[![Ken Sprite Detection Prototype](https://user-images.githubusercontent.com/69095276/114774111-d5c5ad80-9d3d-11eb-97ee-01d5c9442c17.png)](https://medium.com/@TyEdwardsE "CLICK FOR FULL VIDEO")
 
-**SURFACE ANALYSIS** - *Data analysis that can be done with the original dataset*
-- Move hit/block/whiff rates
-- Throw success rate
-- Jump success rate
 
-**DEEP ANALYSIS** - *Data analysis that requires a transformation of the original dataset*
-- Combos
-- Meaties / Stolen Turns
-- Hit Confirms
+## Daigo vs. Tokido Example
+Example that uses manually collected data from a video to analyze a match and prove how useful data can be in fighting games.
 
-**DEEPER ANALYSIS** - *Data analysis that either requires outside data or more technology to properly implement*
-- Health lost to move (e.g., total damage from fireballs) 
-- Projectile throw rhythm
-- Distance walked
-
-## Data Collection
-The "DvT.xlsx" dataset was collected by watching a [video of the matches](https://youtu.be/LLPUW1IAGwY) and manually recording each action. Below are the potential methods for automating the process.
-
-**1.] OFFICIAL IMPLEMENTATION FROM DEVELOPER**
-###### Action + result counter is implemented into the source code and datasets can be exported or analysis is available in-game. (For Street Fighter V, the datasets could be accessed and exported from the [CFN website](https://game.capcom.com/cfn/sfv/).
-_PROS_
-- Data should be guaranteed to be 100% accurate
-- Should be easy to implement in source code
-
-_CONS_
-- Need to be in-game to collect data
-- Requires developer support
-- Won't be implemented for every fighting game (especially games that are no longer updated)
-
-**2.] 3RD PARTY MOD OR SOFTWARE**
-###### Somehow implement the same method as above by modifying game files.
-_PROS_
-- Data should be accurate
-- Doesn't require developer support
-
-_CONS_
-- Need to be in-game to collect data
-- Ease of implementation varies
-
-**3.] OBJECT DETECTION DEEP LEARNING**
-###### Same method used to manually collect the DvT dataset except done by an AI. The AI watches a video of a match and can identify the moves being used and their results.
+## Sprite Detection
+Using object detection to collect data from videos of fighting game matches
 
 [![Ken Sprite Detection Prototype](https://user-images.githubusercontent.com/69095276/113636913-6bc44e80-9641-11eb-9587-1fbfd2701428.gif)](https://www.youtube.com/watch?v=3gc-V6mTFsc "CLICK FOR FULL VIDEO")
 
-_PROS_
-- Don't need to be in-game to collect data
-- Could be used to quickly provide analysis during tournament streams
+_**HOW TO USE**_
 
-_CONS_
-- Can't identify moves than were counterhit on frame 1
-- 100% accurate data not guranteed
-- Difficult to implement
+Currently the sprite detection is not user friendly, but if you want to try the sprite detection on your own videos try following these steps.
+
+1. Download the Sprite Detection folder
+2. Download yolov5 and place it in the Sprite Detection folder
+3. Run detect.bat (Edit the filepath for the source to use your own video and not the sample)
+4. Object detected images or videos will be saved to yolov5/runs/detect/exp
 
 -----------------------------------------------------------------------
 
 ###### WORK IN PROGRESS
-- [x] Turn Tableau analysis
-- [x] "Deeper" Analysis on health loss from moves (Sonicboom)
-- [x] Round based analysis
-- [ ] Rewrite README
-- [ ] DvT dataset analysis article / report
-- [x] Sprite detection prototype
-- [ ] Script that translates detection output into usuable data
-
+- [ ] Write script that translates detection output into useful data
+- [ ] Recreate Ken model with more classes and better training
+- [ ] Attempt model with two or more characters
+- [ ] User friendly GUI for detection
 
