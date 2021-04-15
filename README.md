@@ -6,8 +6,8 @@ _**Objectives**_
 1. **Use data analysis to achieve deeper gameplay analysis.**
 2. **Provide conveinent gameplay analysis for new and casual players**
 
-[_**Read the article for more information**_](https://medium.com/@TyEdwardsE)
-[![Ken Sprite Detection Prototype](https://user-images.githubusercontent.com/69095276/114774111-d5c5ad80-9d3d-11eb-97ee-01d5c9442c17.png)](https://medium.com/@TyEdwardsE "CLICK FOR FULL ARTICLE")
+[_**Read the article for more information**_](https://medium.com/@TyEdwardz/raging-download-a3ff6fcc42cb)
+[![Ken Sprite Detection Prototype](https://user-images.githubusercontent.com/69095276/114774111-d5c5ad80-9d3d-11eb-97ee-01d5c9442c17.png)](https://medium.com/@TyEdwardz/raging-download-a3ff6fcc42cb "CLICK FOR FULL ARTICLE")
 
 
 ## Daigo vs. Tokido Example
