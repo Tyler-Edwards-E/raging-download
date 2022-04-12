@@ -41,7 +41,7 @@ http://ensabahnur.free.fr/BastonNew/index.php
 -----------------------------------------------------------------------
 
 ###### WORK IN PROGRESS
-- [ ] Write script that translates detection output into useful data
+- [x] Write script that translates detection output into useful data
 - [ ] Recreate Ken model with more classes and better training
 - [ ] Attempt model with two or more characters
 - [ ] User friendly GUI for detection
