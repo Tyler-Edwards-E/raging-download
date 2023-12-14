@@ -10,13 +10,13 @@ _**Objectives**_
 [![Ken Sprite Detection Prototype](https://user-images.githubusercontent.com/69095276/114774111-d5c5ad80-9d3d-11eb-97ee-01d5c9442c17.png)](https://medium.com/@TyEdwardz/raging-download-a3ff6fcc42cb "CLICK FOR FULL ARTICLE")
 
 
-## Daigo vs. Tokido Example
-Example that uses manually collected data from a video to analyze a match and prove how useful data can be in fighting games.
+## Daigo vs. Tokido Demo (SFV)
+Proof of concept that uses manually collected data from a video to analyze a match and prove how useful this data can be in fighting games.
 
 ![Normals Comparison](https://user-images.githubusercontent.com/69095276/114776325-58e80300-9d40-11eb-9f6c-7d477ebcc63b.png)
 
 ## Sprite Detection
-Using object detection to collect data from videos of fighting game matches
+Using object detection to collect data from videos of fighting game matches without manually collecting data.
 
 [_**Click for the full video**_](https://www.youtube.com/watch?v=3gc-V6mTFsc)
 
@@ -42,8 +42,10 @@ http://ensabahnur.free.fr/BastonNew/index.php
 
 ###### WORK IN PROGRESS
 - [x] Write script that translates detection output into useful data
-- [ ] Recreate Ken model with more classes and better training
-- [ ] Attempt model with two or more characters
-- [ ] User friendly GUI for detection
+- [x] Recreate Ken model with more classes and better training
+- [x] Attempt model with two or more characters
+- [ ] Apply sprite detection to Under Night
+- [ ] Clean up detection data
+- [ ] Create user-friendly GUI for detection
 
 
