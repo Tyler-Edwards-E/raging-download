@@ -19,16 +19,16 @@ BoomDamage.xlsx | Output from RoundAnalysis.R thats shows the amount of damage t
 _R scripts used to clean and aggregate data for visualizations_
 **Script** | **Description** |
 --- | --- | 
-DvT-ComboTransoform.R | ...|
-DvT-RoundAnalysis.R | ...|
-DvT-TurnTransoform.R | ...|
+DvT-ComboTransoform.R | Transforms the combos in the action data into single elements|
+DvT-RoundAnalysis.R |  Formats data into actions per round and runs t-test. Also calculates average damage of sonicbooms per round|
+DvT-TurnTransoform.R | Identifies turns gained and lost after blocks in the action data|
 
 
-### Visuals
-_Visualizations ..._
-**Visual** | **Description** |
+### Visulizations
+_Tableau visulizations created to easily analyze some of the data_
+**Visuals** | **Description** |
 --- | --- | 
-DvT - Action + Result Visuals.pdf | ...|
-DvT - Combo Visuals.pdf | ...|
-DvT - Round Visuals.pdf | ...|
-DvT – Turn Visualizations.pdf | ...|
+DvT - Action + Result Visuals.pdf | Graphs created from DvT.xlsx, displaying the most used actions from each player|
+DvT - Combo Visuals.pdf | Graphs created from DvT-Combos.xlsx, displaying the most used combos and combo started each player landed|
+DvT - Round Visuals.pdf | Graphs comparing the amount of actions each player performed each round |
+DvT – Turn Visualizations.pdf | Graphs created from DvT-Turns.xlsx, displaying how many times each player won/lost a turn after specific actions or block strings (Winning a "turn" means sucssfully performing an action/attack after making your opponent block something, losing a turn means you were forced to block or were hit afterwards)|
