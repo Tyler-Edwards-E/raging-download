@@ -1,10 +1,27 @@
 # 01 - Preprocessing
 ## Preparing image datasets for object detection training.
 
-_Process (WIP)_
+_To train models on character movesets, you need to first create a large image dataset with each move in each image labeled. This is done automatically by creating folders for each moves' animations and running [YARDS (YOLO Artificial Retro-game Data Synthesizer
+](https://github.com/faimSD/yards). YARDS will randomly take images for the moveset folders and paste them onto the stage backgrounds and automatically label them, creating a "synthetic" image dataset that resembles gameplay and can be used for training._ 
 
-_Find sprites -> sprite_trim_and_shift.py -> create .yaml file -> Run YARDS -> Run pngtojpg.py -> delete .png folders -> rename .jpg folders -> drop .yaml file in -> zip folder -> move onto training_
 
+![SF3rdStrike-20](https://github.com/user-attachments/assets/e061cd74-411a-4caa-a9aa-6f2bdf71a2b7)
+![SF3rdStrike-23](https://github.com/user-attachments/assets/f6f8b4e5-3fcc-46c6-970b-97a9ae034293)
+
+### Process
+1. Obtain the necessary character sprites & backgrounds (`ken-sprites` & `stages` folders)
+2. Manually split the frames of the animations into folders for each move (`ken-sprites`)
+3. Run `sprite_trim_and_shift.py` (Will create `ken-sprites-shift` folder)
+4. Create config.yaml file (`ken-config.yaml`)
+5. Run YARDS command on that config file (`yards command.bat`, creates `ken-data` folder)
+6. Run `pngtojpg.py` (Creates `train-jpg` and `val-jpg` folders inside `ken-data`)
+7. Delete the current `train` and `val` folders
+8. Rename `train-jpg` and `val-jpg` to "train" and "val" respectively
+9. Create a data.yaml file (`ken-data.yaml`) if you haven't already
+10. Zip the folder (`ken-data`)
+11. Move onto training =]
+
+___
 
 **Script** | **Description** |
 --- | --- | 
