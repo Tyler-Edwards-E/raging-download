@@ -2,16 +2,16 @@ from PIL import Image
 import os
 
 
-model_name = 'chun-2024-06-26'
+model_name = 'ken-data'
 # Filepath to train images folder
-train_folder = "YARDS-SF3rdStrike/" + model_name + "/images/train"
+train_folder = "example/" + model_name + "/images/train"
 # Output for jpg versions of train images
-output_train_folder = "YARDS-SF3rdStrike/" + model_name + "/images/train-jpg"
+output_train_folder = "example/" + model_name + "/images/train-jpg"
 
 # Filepath to val images folder
-val_folder = "YARDS-SF3rdStrike/" + model_name + "/images/val"
+val_folder = "example/" + model_name + "/images/val"
 # Output for jpg versions of val images
-output_val_folder = "YARDS-SF3rdStrike/" + model_name + "/images/val-jpg"
+output_val_folder = "example/" + model_name + "/images/val-jpg"
 
 # Create the output folders if they don't exist
 if not os.path.exists(output_train_folder):

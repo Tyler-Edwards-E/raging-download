@@ -4,8 +4,8 @@ from hueshift import shift_hue
 import numpy as np
 import os
 
-spritedir = r"C:\Users\Ty\3D Objects\~RD\Data Generation\YARDS-UNI2\Nanase - Copy" # Folder with raw sprites
-newdir = r"C:\Users\Ty\3D Objects\~RD\Data Generation\YARDS-UNI2\nan-test-sprites" # Folder where you want the edited sprites to go (
+spritedir = r"example/ken-sprites" # Folder with raw sprites
+newdir = r"example/ken-sprites-shift" # Folder where you want the edited sprites to go (
 if not os.path.exists(newdir): # Will create newdir if you didn't already
     os.makedirs(newdir)
 

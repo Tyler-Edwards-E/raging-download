@@ -1,0 +1,82 @@
+directories:
+    maps: './stages/'
+    sprites: './ken-sprites-shift/'
+    output: './ken-data/'
+  #  real: './HL/'
+
+parameters:
+    game_title: 'SF3rdStrike'
+    num_images: 25
+    train_size: 0.80
+    mix_size: 1.0
+    label_all_classes: true
+    labeled_classes: []
+    max_sprites_per_class: -1
+    transform_sprites: false
+    clip_sprites: true
+    classification_scheme: 'distribution'
+
+classes:
+    KEN-214K: [0.95, 0.05, 0.000]
+    KEN-236P: [0.95, 0.05, 0.000]
+    KEN-2HK: [0.95, 0.05, 0.000]
+    KEN-2HP: [0.95, 0.05, 0.000]
+    KEN-2LK: [0.95, 0.05, 0.000]
+    KEN-2LP~2MP: [0.95, 0.05, 0.000]
+    KEN-2MK: [0.95, 0.05, 0.000]
+    KEN-2MK~2HK: [0.95, 0.05, 0.000]
+    KEN-4MK: [0.95, 0.05, 0.000]
+    KEN-5HK: [0.95, 0.05, 0.000]
+    KEN-5HP: [0.95, 0.05, 0.000]
+    KEN-5LK: [0.95, 0.05, 0.000]
+    KEN-5LP: [0.95, 0.05, 0.000]
+    KEN-5MK: [0.95, 0.05, 0.000]
+    KEN-5MK~5HK: [0.95, 0.05, 0.000]
+    KEN-5MP: [0.95, 0.05, 0.000]
+    KEN-623P: [0.95, 0.05, 0.000]
+    KEN-6HK: [0.95, 0.05, 0.000]
+    KEN-6MK: [0.95, 0.05, 0.000]
+    KEN-6MK~6HK: [0.95, 0.05, 0.000]
+    KEN-block-high: [0.95, 0.05, 0.000]
+    KEN-block-low: [0.95, 0.05, 0.000]
+    KEN-block-mid: [0.95, 0.05, 0.000]
+    KEN-cl5HP: [0.95, 0.05, 0.000]
+    KEN-cl5LP: [0.95, 0.05, 0.000]
+    KEN-cl5MP: [0.95, 0.05, 0.000]
+    KEN-crouching: [0.95, 0.05, 0.000]
+    KEN-dash-backward: [0.95, 0.05, 0.000]
+    KEN-dash-forward: [0.95, 0.05, 0.000]
+    KEN-hit-air: [0.95, 0.05, 0.000]
+    KEN-hit-crouching: [0.95, 0.05, 0.000]
+    KEN-hit-standing: [0.95, 0.05, 0.000]
+    KEN-intro: [0.95, 0.05, 0.000]
+    KEN-j79HK: [0.95, 0.05, 0.000]
+    KEN-j79MK: [0.95, 0.05, 0.000]
+    KEN-j8HK: [0.95, 0.05, 0.000]
+    KEN-j8HP: [0.95, 0.05, 0.000]
+    KEN-j8MK: [0.95, 0.05, 0.000]
+    KEN-jLK: [0.95, 0.05, 0.000]
+    KEN-jLK~j79MK: [0.95, 0.05, 0.000]
+    KEN-jLP: [0.95, 0.05, 0.000]
+    KEN-jMP~j79HP~UOH: [0.95, 0.05, 0.000]
+    KEN-jump-7: [0.95, 0.05, 0.000]
+    KEN-jump-8: [0.95, 0.05, 0.000]
+    KEN-jump-9: [0.95, 0.05, 0.000]
+    KEN-knockdown: [0.95, 0.05, 0.000]
+    KEN-lose: [0.95, 0.05, 0.000]
+    KEN-parry-air: [0.95, 0.05, 0.000]
+    KEN-parry-high: [0.95, 0.05, 0.000]
+    KEN-parry-low: [0.95, 0.05, 0.000]
+    KEN-rise: [0.95, 0.05, 0.000]
+    KEN-standing: [0.95, 0.05, 0.000]
+    KEN-stun: [0.95, 0.05, 0.000]
+    KEN-taunt: [0.95, 0.05, 0.000]
+    KEN-throw: [0.95, 0.05, 0.000]
+    KEN-throw-backward: [0.95, 0.05, 0.000]
+    KEN-throw-break: [0.95, 0.05, 0.000]
+    KEN-throw-forward: [0.95, 0.05, 0.000]
+    KEN-throw-neutral: [0.95, 0.05, 0.000]
+    KEN-throw-whiff: [0.95, 0.05, 0.000]
+    KEN-walk-backward: [0.95, 0.05, 0.000]
+    KEN-walk-forward: [0.95, 0.05, 0.000]
+    KEN-win: [0.95, 0.05, 0.000]
