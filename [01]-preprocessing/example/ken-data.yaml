@@ -1,5 +1,5 @@
-train: ../input/ken-data/ken-data/images/train
-val: ../input/ken-data/ken-data/images/val
+train: ../input/ken-example/ken-example/images/train
+val: ../input/ken-example/ken-example/images/val
 
 nc: 63
 names: [
