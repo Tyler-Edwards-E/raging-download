@@ -3,6 +3,8 @@
 
 ### [_**More details in the article.**_](https://medium.com/@TyEdwardz/raging-download-a3ff6fcc42cb)
 
+![Normals Comparison](https://user-images.githubusercontent.com/69095276/114776325-58e80300-9d40-11eb-9f6c-7d477ebcc63b.png)
+
 ### Data
 _Data was collected from a video of an online Street Fighter 5 matches between top Japanese players Daigo Umehara and Tokido. The video has since been deleted, 
 but the data was collected by pausing the video anytime a player performed an action and manually recording it into the spreadsheet. (Basic movements like walking and crouching were excluded.)_
