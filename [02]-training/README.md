@@ -1,5 +1,5 @@
 # 02 - Training
-## Training a detection model in a Kaggle Notebook
+## Training a detection model in a Kaggle Notebook using YOLOv8
 
 ### Process
 1. Log into Kaggle and upload the zipped folder from [[01]-prepreoccessing](https://github.com/Tyler-Edwards-E/raging-download/tree/main/%5B01%5D-preprocessing) (`ken-example.zip`)
