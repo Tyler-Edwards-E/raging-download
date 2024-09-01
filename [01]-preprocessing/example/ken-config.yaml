@@ -6,7 +6,7 @@ directories:
 
 parameters:
     game_title: 'SF3rdStrike'
-    num_images: 25
+    num_images: 100
     train_size: 0.80
     mix_size: 1.0
     label_all_classes: true
