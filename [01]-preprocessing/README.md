@@ -13,12 +13,12 @@ _To train models on character movesets, you need to first create a large image d
 2. Manually split the frames of the animations into folders for each move (`ken-sprites`)
 3. Run `sprite_trim_and_shift.py` (Will create `ken-sprites-shift` folder)
 4. Create config.yaml file (`ken-config.yaml`)
-5. Run YARDS command on that config file (`yards command.bat`, creates `ken-data` folder)
-6. Run `pngtojpg.py` (Creates `train-jpg` and `val-jpg` folders inside `ken-data`)
+5. Run YARDS command on that config file (`yards command.bat`, creates `ken-example` folder)
+6. Run `pngtojpg.py` (Creates `train-jpg` and `val-jpg` folders inside `ken-example`)
 7. Delete the current `train` and `val` folders
 8. Rename `train-jpg` and `val-jpg` to "train" and "val" respectively
 9. Create a data.yaml file (`ken-data.yaml`) if you haven't already
-10. Zip the folder (`ken-data`)
+10. Zip the folder (`ken-example`)
 11. Move onto training =]
 
 ___
