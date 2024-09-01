@@ -18,7 +18,7 @@ _To train models on character movesets, you need to first create a large image d
 7. Delete the current `train` and `val` folders
 8. Rename `train-jpg` and `val-jpg` to "train" and "val" respectively
 9. Create a data.yaml file (`ken-data.yaml`) if you haven't already
-10. Zip the folder (`ken-example`) and upload it to Kaggle
+10. Zip the folder (`ken-example`)
 11. Move onto training =]
 
 ___
