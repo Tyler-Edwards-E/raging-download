@@ -2,7 +2,7 @@ from PIL import Image
 import os
 
 
-model_name = 'ken-data'
+model_name = 'ken-example'
 # Filepath to train images folder
 train_folder = "example/" + model_name + "/images/train"
 # Output for jpg versions of train images
