@@ -11,7 +11,7 @@ _To train models on character movesets, you need to first create a large image d
 ### Process
 1. Obtain the necessary character sprites & backgrounds (`ken-sprites` & `stages` folders)
 2. Manually split the frames of the animations into folders for each move (`ken-sprites`)
-3. (OPTIONAL) Create a labelmap text file by going to command prompt, navigating to the sprites folder (`ken-sprites`), and typing "dir > labels.txt". Then format this file to be only a list of all the moves in the folder (`ken-labels.txt`)
+3. Create a labelmap text file by going to command prompt, navigating to the sprites folder (`ken-sprites`), and typing "dir /b > labels.txt". Open the text file, remove the filename at the top of the list, save the file, and remove it from the sprites folder.
 4. Run `sprite_trim_and_shift.py` (Will create `ken-sprites-shift` folder)
 5. Create config.yaml file (`ken-config.yaml`) and edit the parameters as needed (See [YARDS documentation](https://github.com/faimSD/yards))
 6. Run YARDS command on that config file (`yards command.bat`, creates `ken-example` folder)
