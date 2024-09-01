@@ -1,5 +1,5 @@
 # 01 - Preprocessing
-## Preparing image datasets for object detection training.
+## Preparing image datasets for object detection training with [YARDS](https://github.com/faimSD/yards)
 
 _To train models on character movesets, you need to first create a large image dataset with each move in each image labeled. This is done automatically by creating folders for each moves' animations and running [YARDS (YOLO Artificial Retro-game Data Synthesizer
 ](https://github.com/faimSD/yards). YARDS will randomly take images for the moveset folders and paste them onto the stage backgrounds and automatically label them, creating a "synthetic" image dataset that resembles gameplay and can be used for training._ 
