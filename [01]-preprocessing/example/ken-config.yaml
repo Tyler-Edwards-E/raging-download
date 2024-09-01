@@ -1,7 +1,7 @@
 directories:
     maps: './stages/'
     sprites: './ken-sprites-shift/'
-    output: './ken-data/'
+    output: './ken-example/'
   #  real: './HL/'
 
 parameters:
