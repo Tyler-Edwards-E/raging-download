@@ -12,15 +12,16 @@ _To train models on character movesets, you need to first create a large image d
 1. Obtain the necessary character sprites & backgrounds (`ken-sprites` & `stages` folders)
 2. Manually split the frames of the animations into folders for each move (`ken-sprites`)
 3. Create a labelmap text file by going to command prompt, navigating to the sprites folder (`ken-sprites`), and enter `dir /b > labels.txt`. Open the text file, remove the filename from the list, save the file, and remove it from the sprites folder.
-4. Run `sprite_trim_and_shift.py` (Will create `ken-sprites-shift` folder)
-5. Create config.yaml file (`ken-config.yaml`) and edit the parameters as needed (See [YARDS documentation](https://github.com/faimSD/yards))
-6. Run YARDS command on that config file (`yards command.bat`, creates `ken-example` folder)
-7. Run `pngtojpg.py` (Creates `train-jpg` and `val-jpg` folders inside `ken-example`)
-8. Delete the current `train` and `val` folders
-9. Rename `train-jpg` and `val-jpg` to "train" and "val" respectively
-10. Create a data.yaml file (`ken-data.yaml`) if you haven't already
-11. Zip the folder (`ken-example`)
-12. Move onto training =]
+4. (OPTIONAL) Paste the list from the labelmap into the `RD Class Template.xlsx` to simplify the formatting for the .YAML files
+5. Run `sprite_trim_and_shift.py` (Will create `ken-sprites-shift` folder)
+6. Create config.yaml file (`ken-config.yaml`) and edit the parameters as needed (See [YARDS documentation](https://github.com/faimSD/yards))
+7. Run YARDS command on that config file (`yards command.bat`, creates `ken-example` folder)
+8. Run `pngtojpg.py` (Creates `train-jpg` and `val-jpg` folders inside `ken-example`)
+9. Delete the current `train` and `val` folders
+10. Rename `train-jpg` and `val-jpg` to "train" and "val" respectively
+11. Create a data.yaml file (`ken-data.yaml`) if you haven't already and change `nc` to be the number of classes/moves you're training
+12. Zip the folder (`ken-example`)
+13. Move onto training =]
 
 ___
 
