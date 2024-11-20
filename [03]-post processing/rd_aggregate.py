@@ -78,7 +78,7 @@ def character_frames(filepath, keypath):
     df = pd.DataFrame(columns = ["video", "frame", "time", "character", "action", "description", "x", "y", "w", "h", "area", "confidence"])
 
     # Creating dictionary for move/sprite list since they're encoded in the text file output
-    with open(keypath, encoding='utf-16') as f:
+    with open(keypath, encoding='utf-8') as f:
         lines = f.readlines()
         i_list = list(range(0,len(lines)))
         lines2 = []
@@ -274,20 +274,20 @@ def validate_characters(r, c1, c2, debug=False):
         c2_f = c2[c2["frame"] == f].sort_values('confidence', ascending=False).reset_index()
 
         # Initialize distance columns
-        r_f['distance_from_r1_prev'] = -1
-        r_f['distance_from_c1_prev'] = -1
-        # r_f['distance_avg1'] = -1
-        r_f['distance_from_r2_prev'] = -1
-        r_f['distance_from_c2_prev'] = -1
-        # r_f['distance_avg2'] = -1
+        r_f['distance_from_r1_prev'] = 0.0
+        r_f['distance_from_c1_prev'] = 0.0
+        # r_f['distance_avg1'] = 0.0
+        r_f['distance_from_r2_prev'] = 0.0
+        r_f['distance_from_c2_prev'] = 0.0
+        # r_f['distance_avg2'] = 0.0
 
-        c1_f['distance_from_r1_prev'] = -1
-        # c1_f['distance_from_r1_current'] = -1
-        c1_f['distance_from_c1_prev'] = -1
+        c1_f['distance_from_r1_prev'] = 0.0
+        # c1_f['distance_from_r1_current'] = 0.0
+        c1_f['distance_from_c1_prev'] = 0.0
 
-        c2_f['distance_from_r2_prev'] = -1
-        # c2_f['distance_from_r2_current'] = -1
-        c2_f['distance_from_c2_prev'] = -1
+        c2_f['distance_from_r2_prev'] = 0.0
+        # c2_f['distance_from_r2_current'] = 0.0
+        c2_f['distance_from_c2_prev'] = 0.0
 
         # Checking if tracking has been lost (Last 5 frames have been skipped)
         if t1 <= 0:
@@ -303,32 +303,33 @@ def validate_characters(r, c1, c2, debug=False):
         j = 0
         while j < len(r_f['x']):  # Find distance of current r_f rows from previous c and r detections
             if tracking_c1:
-                r_f.loc[j, 'distance_from_r1_prev'] = math.dist(r1_xy_prev, [r_f['x'][j], r_f['y'][j]])
-                r_f.loc[j, 'distance_from_c1_prev'] = math.dist(c1_xy_prev, [r_f['x'][j], r_f['y'][j]])
+                r_f.loc[j, 'distance_from_r1_prev'] = float(math.dist(r1_xy_prev, [r_f['x'][j], r_f['y'][j]]))
+                r_f.loc[j, 'distance_from_c1_prev'] = float(math.dist(c1_xy_prev, [r_f['x'][j], r_f['y'][j]]))
             if tracking_c2:
-                r_f.loc[j, 'distance_from_r2_prev'] = math.dist(r2_xy_prev, [r_f['x'][j], r_f['y'][j]])
-                r_f.loc[j, 'distance_from_c2_prev'] = math.dist(c2_xy_prev, [r_f['x'][j], r_f['y'][j]])
+                r_f.loc[j, 'distance_from_r2_prev'] = float(math.dist(r2_xy_prev, [r_f['x'][j], r_f['y'][j]]))
+                r_f.loc[j, 'distance_from_c2_prev'] = float(math.dist(c2_xy_prev, [r_f['x'][j], r_f['y'][j]]))
             j = j + 1
-            r_f['distance_avg1'] = r_f['distance_from_r1_prev'] +  r_f['distance_from_c1_prev'] / 2
-            r_f['distance_avg2'] = r_f['distance_from_r2_prev'] +  r_f['distance_from_c2_prev'] / 2
+        r_f['distance_avg1'] = r_f['distance_from_r1_prev'] +  r_f['distance_from_c1_prev'] / 2
+        r_f['distance_avg2'] = r_f['distance_from_r2_prev'] +  r_f['distance_from_c2_prev'] / 2
 
-        if tracking_c1 and len(c1_f) > 0:
-            winner_r1 = r_f['distance_avg1'].idxmin()  # Coordinates of current frame's roster detection
-            r1_xy_current = [r_f.iloc[winner_r1]['x'], r_f.iloc[winner_r1]['y']]  # Current detection for c1 in roster
-        if tracking_c2 and len(c2_f) > 0:
-            winner_r2 = r_f['distance_avg2'].idxmin()  # Coordinates of current frame's roster detection
-            r2_xy_current = [r_f.iloc[winner_r2]['x'], r_f.iloc[winner_r2]['y']]  # Current detection for c2 in roster
-        if (tracking_c1 and len(c1_f) > 0) and (tracking_c2 and len(c2_f) > 0):
-            if winner_r1 == winner_r2:  # Confirm they're not looking at the same detection ####### can improve this
-                if debug:
-                    print("----- SAME DETECTION")
-                    print("----- WINNER 1 ->", winner_r1)
-                    print("----- WINNER 2 ->", winner_r2)
-                    print("----- DETECTED CHARACTERS ->", list(r_f['character']))
-                f = f + 1
-                t1 = t1 - 1
-                t2 = t2 - 1
-                continue
+        if len(r_f) > 0:
+            if tracking_c1 and len(c1_f) > 0:
+                winner_r1 = r_f['distance_avg1'].idxmin()  # Coordinates of current frame's roster detection
+                r1_xy_current = [r_f.iloc[winner_r1]['x'], r_f.iloc[winner_r1]['y']]  # Current detection for c1 in roster
+            if tracking_c2 and len(c2_f) > 0:
+                winner_r2 = r_f['distance_avg2'].idxmin()  # Coordinates of current frame's roster detection
+                r2_xy_current = [r_f.iloc[winner_r2]['x'], r_f.iloc[winner_r2]['y']]  # Current detection for c2 in roster
+            if (tracking_c1 and len(c1_f) > 0) and (tracking_c2 and len(c2_f) > 0):
+                if winner_r1 == winner_r2:  # Confirm they're not looking at the same detection ####### can improve this
+                    if debug:
+                        print("----- SAME DETECTION")
+                        print("----- WINNER 1 ->", winner_r1)
+                        print("----- WINNER 2 ->", winner_r2)
+                        print("----- DETECTED CHARACTERS ->", list(r_f['character']))
+                    f = f + 1
+                    t1 = t1 - 1
+                    t2 = t2 - 1
+                    continue
 
         # ------------------------------------------------------------------------------------------------------------
         # ------------------------------------------- CHARACTER 1 TRACKING -------------------------------------------
@@ -338,9 +339,9 @@ def validate_characters(r, c1, c2, debug=False):
             # Filling distance columns
             i = 0
             while i < len(c1_f):
-                c1_f.loc[i, 'distance_from_c1_prev'] = math.dist(c1_xy_prev, [c1_f['x'][i], c1_f['y'][i]])
-                c1_f.loc[i, 'distance_from_r1_prev'] = math.dist(r1_xy_prev, [c1_f['x'][i], c1_f['y'][i]])
-                c1_f.loc[i, 'distance_from_r1_current'] = math.dist(r1_xy_current, [c1_f['x'][i], c1_f['y'][i]])
+                c1_f.loc[i, 'distance_from_c1_prev'] = float(math.dist(c1_xy_prev, [c1_f['x'][i], c1_f['y'][i]]))
+                c1_f.loc[i, 'distance_from_r1_prev'] = float(math.dist(r1_xy_prev, [c1_f['x'][i], c1_f['y'][i]]))
+                c1_f.loc[i, 'distance_from_r1_current'] = float(math.dist(r1_xy_current, [c1_f['x'][i], c1_f['y'][i]]))
                 c1_f.loc[i, 'distance_average'] = np.mean([c1_f.loc[i, 'distance_from_c1_prev'],
                                                           c1_f.loc[i, 'distance_from_r1_prev'],
                                                            c1_f.loc[i, 'distance_from_r1_current']])
@@ -414,9 +415,9 @@ def validate_characters(r, c1, c2, debug=False):
             # Filling distance columns
             i = 0
             while i < len(c2_f):
-                c2_f.loc[i, 'distance_from_c2_prev'] = math.dist(c2_xy_prev, [c2_f['x'][i], c2_f['y'][i]])
-                c2_f.loc[i, 'distance_from_r2_prev'] = math.dist(r2_xy_prev, [c2_f['x'][i], c2_f['y'][i]])
-                c2_f.loc[i, 'distance_from_r2_current'] = math.dist(r2_xy_current, [c2_f['x'][i], c2_f['y'][i]])
+                c2_f.loc[i, 'distance_from_c2_prev'] = float(math.dist(c2_xy_prev, [c2_f['x'][i], c2_f['y'][i]]))
+                c2_f.loc[i, 'distance_from_r2_prev'] = float(math.dist(r2_xy_prev, [c2_f['x'][i], c2_f['y'][i]]))
+                c2_f.loc[i, 'distance_from_r2_current'] = float(math.dist(r2_xy_current, [c2_f['x'][i], c2_f['y'][i]]))
                 c2_f.loc[i, 'distance_average'] = np.mean([c2_f.loc[i, 'distance_from_c2_prev'],
                                                            c2_f.loc[i, 'distance_from_r2_prev'],
                                                            c2_f.loc[i, 'distance_from_r2_current']])
@@ -508,7 +509,7 @@ def actions(df):
         if [prev_act, prev_desc] != [df["action"].iloc[i], df["description"].iloc[i]]:
             # print(i, prev_act, prev_desc, firstframe, lastframe, duration, conf)
             xy2 = [df["x"].iloc[i], df["y"].iloc[i]]
-            dxy = math.dist(xy1, xy2)
+            dxy = float(math.dist(xy1, xy2))
             if duration <= 1:  # Only appears for one frame
                 lastframe = firstframe
             else:  # Appears for multiple frames
@@ -553,7 +554,7 @@ def actions(df):
         while j < len(new_df1):
             if prev_act != new_df1["action"].iloc[j] and prev_desc != new_df1["description"].iloc[j]: # If previous action is different from current, stop tracking current move
                 xy2 = new_df1['ending_position'].iloc[j]
-                dxy = math.dist(xy1, xy2)
+                dxy = float(math.dist(xy1, xy2))
                 if duration <= 1:  # Only appears for one frame
                     lastframe = new_df1["ending_frame"].iloc[j]
                 else:  # Appears for multiple frames
@@ -579,8 +580,7 @@ def actions(df):
         if c == 0:
             clean = True
         new_df1 = new_df2.copy()
-
-    return new_df2
+    return new_df2.drop_duplicates(subset=['startup_frame', 'time', 'action', 'description'], keep='last')
 
 # ------------------------------------------ RESULTS MERGING ---------------------------------------------------------------
 # Adding "results" to attacks in action dataframe
@@ -604,7 +604,7 @@ def results(df):
     # Iterating over actions/sprites and looking for the characters to be in "hit", "block", or "parry" state, then looking at the other character to see what caused that state.
     for index, row in df.iterrows():
         # Converting time doulbe into an actual datetime value
-        df.loc[index, "time"] = str(datetime.timedelta(seconds= int(df.loc[index, "time"])))
+        df.loc[index, "time"] = datetime.timedelta(seconds= int(df.loc[index, "time"]))
         # df.loc[index, "time"] = pd.to_datetime(int(df.loc[index, "time"]), unit='s')
 
         ####  have to do something here to handle projectiles?
@@ -628,14 +628,20 @@ def results(df):
                     i = i + 1
 
         # Reorder and rename columns
-    df = df[['time', 'startup_frame', 'ending_frame_x', 'total_frames_x', "character_x", "action_x", "description_x",
-             "P1_result", "avg_confidence_x", 'starting_position_x', 'ending_position_x', 'distance_moved_x',
-            'ending_frame_y', 'total_frames_y', "character_y", "action_y", "description_y", "P2_result", "avg_confidence_y",
+    df = df[['time', 'startup_frame', 'ending_frame_x',
+             'total_frames_x', "character_x", "action_x",
+             "description_x","P1_result", "avg_confidence_x",
+             'starting_position_x', 'ending_position_x', 'distance_moved_x',
+            'ending_frame_y', 'total_frames_y', "character_y",
+             "action_y", "description_y", "P2_result", "avg_confidence_y",
              'starting_position_y', 'ending_position_y', 'distance_moved_y']]
-    cols = ['timestamp', 'P1_ending_frame', 'P1_total_frames','P1_character','P1_action','P1_description',
-                    'P1_result', 'P1_avg_confidence', 'P1_starting_position', "P1_ending_position", "P1_distance_moved",
-                    'ending_frame_y', 'P2_ending_frame', 'P2_total_frames',
-                    'P2_character', 'P2_action', 'P2_description', 'P2_result', 'P2_avg_confidence',
-                    'P2_starting_position', "P2_ending_position", "P2_distance_moved"]
+
+    cols = ['timestamp', 'startup_frame', 'P1_ending_frame',
+            'P1_total_frames','P1_character','P1_action',
+            'P1_description', 'P1_result', 'P1_avg_confidence',
+            'P1_starting_position', "P1_ending_position", "P1_distance_moved",
+            'P2_ending_frame', 'P2_total_frames', 'P2_character',
+            'P2_action', 'P2_description', 'P2_result', 'P2_avg_confidence',
+            'P2_starting_position', "P2_ending_position", "P2_distance_moved"]
     df.columns = cols
     return df
