@@ -1,0 +1,8 @@
+HUD-characterselect
+HUD-meter-0
+HUD-meter-1
+HUD-meter-2
+HUD-meter-3
+HUD-SA1
+HUD-SA2
+HUD-SA3
